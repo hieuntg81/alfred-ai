@@ -4,7 +4,7 @@ version: "1.0"
 description: Perform a thorough code review for bugs, security, and best practices
 author: alfredai
 tags: [developer, code, review, quality]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

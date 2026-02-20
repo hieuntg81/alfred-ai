@@ -4,7 +4,7 @@ version: "1.0"
 description: Suggest reply options for a received message
 author: alfredai
 tags: [communication, reply, messaging]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

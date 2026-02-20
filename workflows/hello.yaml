@@ -1,0 +1,10 @@
+name: hello
+description: A simple hello world workflow for testing
+steps:
+  - id: timestamp
+    type: exec
+    command: "date"
+    args: ["+%Y-%m-%d %H:%M:%S"]
+  - id: greet
+    type: transform
+    template: "Hello from the workflow! Current time is: {{.Steps.timestamp.Output}}"

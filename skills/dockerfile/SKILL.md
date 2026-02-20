@@ -4,7 +4,7 @@ version: "1.0"
 description: Create or optimize Dockerfiles with multi-stage builds and best practices
 author: alfredai
 tags: [developer, docker, devops, containers]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

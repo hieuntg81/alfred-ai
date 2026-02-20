@@ -4,7 +4,7 @@ version: "1.0"
 description: Translate text between languages while preserving tone and meaning
 author: alfredai
 tags: [productivity, text, translate, language]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

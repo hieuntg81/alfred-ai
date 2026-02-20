@@ -4,7 +4,7 @@ version: "1.0"
 description: Suggest refactoring improvements for code with concrete before/after examples
 author: alfredai
 tags: [developer, code, refactoring, quality]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

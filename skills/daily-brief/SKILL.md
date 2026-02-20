@@ -4,7 +4,7 @@ version: "1.0"
 description: Generate a daily briefing from various inputs (tasks, calendar, messages)
 author: alfredai
 tags: [communication, daily, briefing, productivity]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

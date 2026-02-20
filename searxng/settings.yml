@@ -1,0 +1,12 @@
+use_default_settings: true
+
+search:
+  formats:
+    - html
+    - json
+
+server:
+  secret_key: "alfredai-searxng-secret-key-2026"
+  limiter: false
+  image_proxy: false
+  method: "GET"

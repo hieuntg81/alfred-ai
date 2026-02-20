@@ -4,7 +4,7 @@ version: "1.0"
 description: Draft a professional email from key points or a brief description
 author: alfredai
 tags: [communication, email, writing]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

@@ -4,7 +4,7 @@ version: "1.0"
 description: Create a weighted decision matrix to compare options objectively
 author: alfredai
 tags: [productivity, decision, analysis, comparison]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

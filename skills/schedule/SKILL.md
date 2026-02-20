@@ -4,7 +4,7 @@ version: "1.0"
 description: Help organize and plan schedules, agendas, or time blocks
 author: alfredai
 tags: [communication, schedule, planning, productivity]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

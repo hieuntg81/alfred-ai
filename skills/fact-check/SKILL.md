@@ -4,7 +4,7 @@ version: "1.0"
 description: Verify claims and statements for accuracy
 author: alfredai
 tags: [research, fact-check, verification, accuracy]
-trigger: prompt
+trigger: both
 tools: [web_search]
 model_preference: default
 ---

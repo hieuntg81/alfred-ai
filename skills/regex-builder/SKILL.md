@@ -4,7 +4,7 @@ version: "1.0"
 description: Build and explain regular expressions with test cases
 author: alfredai
 tags: [developer, regex, text, patterns]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

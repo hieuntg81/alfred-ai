@@ -4,7 +4,7 @@ version: "1.0"
 description: Proofread text for grammar, spelling, and punctuation errors
 author: alfredai
 tags: [productivity, text, proofread, grammar]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

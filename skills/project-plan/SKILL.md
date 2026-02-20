@@ -4,7 +4,7 @@ version: "1.0"
 description: Break down a project into tasks with dependencies and effort estimates
 author: alfredai
 tags: [productivity, planning, project, tasks]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

@@ -4,7 +4,7 @@ version: "1.0"
 description: Transform raw meeting notes or transcripts into structured summaries
 author: alfredai
 tags: [communication, meeting, notes, productivity]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

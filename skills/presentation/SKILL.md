@@ -4,7 +4,7 @@ version: "1.0"
 description: Create a structured presentation outline with speaker notes
 author: alfredai
 tags: [productivity, presentation, communication, slides]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

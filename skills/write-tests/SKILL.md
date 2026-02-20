@@ -4,7 +4,7 @@ version: "1.0"
 description: Generate comprehensive test cases for the given code
 author: alfredai
 tags: [developer, code, testing, quality]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

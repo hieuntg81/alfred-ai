@@ -4,7 +4,7 @@ version: "1.0"
 description: Write, optimize, and explain SQL queries
 author: alfredai
 tags: [developer, sql, database, query]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

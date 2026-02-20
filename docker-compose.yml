@@ -11,6 +11,7 @@ services:
       - "${ALFREDAI_GATEWAY_PORT:-8090}:8090"
     volumes:
       - ./config.yaml:/app/config.yaml:ro
+      - ./workflows:/app/workflows:ro
       - alfred-data:/app/data
     env_file:
       - .env
@@ -27,7 +28,7 @@ services:
     ports:
       - "${SEARXNG_PORT:-6060}:8080"
     volumes:
-      - searxng-data:/etc/searxng
+      - ./searxng:/etc/searxng:rw
     environment:
       - SEARXNG_BASE_URL=http://localhost:${SEARXNG_PORT:-6060}/
     healthcheck:
@@ -40,4 +41,3 @@ services:
 
 volumes:
   alfred-data:
-  searxng-data:

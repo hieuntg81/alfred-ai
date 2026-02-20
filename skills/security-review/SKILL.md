@@ -4,7 +4,7 @@ version: "1.0"
 description: Review code for security vulnerabilities and suggest fixes
 author: alfredai
 tags: [developer, security, review, audit]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

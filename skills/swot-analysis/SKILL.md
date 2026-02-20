@@ -4,7 +4,7 @@ version: "1.0"
 description: Perform a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats)
 author: alfredai
 tags: [productivity, analysis, strategy, business]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

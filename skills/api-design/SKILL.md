@@ -4,7 +4,7 @@ version: "1.0"
 description: Design REST or GraphQL APIs with endpoints, schemas, and best practices
 author: alfredai
 tags: [developer, api, design, architecture]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

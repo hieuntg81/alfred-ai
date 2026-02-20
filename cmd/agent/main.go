@@ -344,9 +344,13 @@ func run() error {
 
 	// Start channels
 	if len(runtime.Channels) == 1 {
-		// Single channel (usually CLI): block on it
+		// Single channel: start and wait for shutdown
 		ch := runtime.Channels[0]
-		return ch.Start(ctx, handler(ch.Send))
+		if err := ch.Start(ctx, handler(ch.Send)); err != nil {
+			return err
+		}
+		<-ctx.Done()
+		return nil
 	}
 
 	// Multiple channels: start all in parallel

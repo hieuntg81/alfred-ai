@@ -4,7 +4,7 @@ version: "1.0"
 description: Generate a conventional commit message from a diff or description of changes
 author: alfredai
 tags: [developer, git, commit, workflow]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

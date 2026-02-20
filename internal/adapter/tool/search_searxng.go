@@ -59,6 +59,7 @@ func (b *SearXNGBackend) Search(ctx context.Context, query string, count int, ti
 	}
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", "alfred-ai/1.0")
 
 	resp, err := b.client.Do(req)
 	if err != nil {

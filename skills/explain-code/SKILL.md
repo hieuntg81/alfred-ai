@@ -4,7 +4,7 @@ version: "1.0"
 description: Explain code in plain language, including logic flow and design decisions
 author: alfredai
 tags: [developer, code, explain, learning]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

@@ -4,7 +4,7 @@ version: "1.0"
 description: Rewrite text to improve clarity, tone, or style
 author: alfredai
 tags: [productivity, text, rewrite, editing]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

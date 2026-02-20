@@ -4,7 +4,7 @@ version: "1.0"
 description: Generate JSON Schema from examples or descriptions
 author: alfredai
 tags: [developer, json, schema, validation]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

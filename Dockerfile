@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.23-alpine AS builder
+FROM golang:1.26-alpine AS builder
 
 # Install build dependencies
 RUN apk add --no-cache git ca-certificates tzdata
@@ -39,12 +39,14 @@ RUN addgroup -g 1000 alfredai && \
 
 WORKDIR /app
 
-# Copy binary and skills from builder
+# Copy binary, skills, and workflows from builder
 COPY --from=builder /build/alfred-ai /app/alfred-ai
 COPY --from=builder /build/skills /app/skills
+COPY --from=builder /build/workflows /app/workflows
 
 # Create data directories
-RUN mkdir -p /app/data/memories /app/data/sessions && \
+RUN mkdir -p /app/data/memory /app/data/sessions /app/data/notes \
+    /app/data/cron /app/data/canvas /app/data/workflows /app/data/workspace && \
     chown -R alfredai:alfredai /app
 
 # Switch to non-root user

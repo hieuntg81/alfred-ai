@@ -4,7 +4,7 @@ version: "1.0"
 description: Summarize long text into concise key points
 author: alfredai
 tags: [productivity, text, summarize]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: fast
 ---

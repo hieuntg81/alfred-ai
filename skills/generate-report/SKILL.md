@@ -4,7 +4,7 @@ version: "1.0"
 description: Generate a structured report from raw data or notes
 author: alfredai
 tags: [research, report, writing, documentation]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: default
 ---

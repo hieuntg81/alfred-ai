@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log/slog"
+	"path/filepath"
 	"strings"
 
 	"alfred-ai/internal/domain"
@@ -39,7 +40,7 @@ func (t *FilesystemTool) Schema() domain.ToolSchema {
 				"path": {"type": "string", "description": "File or directory path"},
 				"content": {"type": "string", "description": "Content to write (only for write action)"}
 			},
-			"required": ["action", "path"]
+			"required": ["action"]
 		}`),
 	}
 }
@@ -60,8 +61,18 @@ func (t *FilesystemTool) Execute(ctx context.Context, params json.RawMessage) (*
 	)
 }
 
+func (t *FilesystemTool) resolvePath(path string) (string, error) {
+	if path == "" || path == "." {
+		return t.sandbox.Root(), nil
+	}
+	if !filepath.IsAbs(path) {
+		path = filepath.Join(t.sandbox.Root(), path)
+	}
+	return t.sandbox.ValidatePath(path)
+}
+
 func (t *FilesystemTool) readFile(_ context.Context, p filesystemParams) (any, error) {
-	resolved, err := t.sandbox.ValidatePath(p.Path)
+	resolved, err := t.resolvePath(p.Path)
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +87,7 @@ func (t *FilesystemTool) readFile(_ context.Context, p filesystemParams) (any, e
 }
 
 func (t *FilesystemTool) writeFile(_ context.Context, p filesystemParams) (any, error) {
-	resolved, err := t.sandbox.ValidatePath(p.Path)
+	resolved, err := t.resolvePath(p.Path)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +101,7 @@ func (t *FilesystemTool) writeFile(_ context.Context, p filesystemParams) (any, 
 }
 
 func (t *FilesystemTool) listDir(_ context.Context, p filesystemParams) (any, error) {
-	resolved, err := t.sandbox.ValidatePath(p.Path)
+	resolved, err := t.resolvePath(p.Path)
 	if err != nil {
 		return nil, err
 	}

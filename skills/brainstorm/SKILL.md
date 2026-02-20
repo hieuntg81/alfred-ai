@@ -4,7 +4,7 @@ version: "1.0"
 description: Structured brainstorming with divergent and convergent thinking phases
 author: alfredai
 tags: [productivity, creativity, brainstorm, ideation]
-trigger: prompt
+trigger: both
 tools: []
 model_preference: powerful
 ---

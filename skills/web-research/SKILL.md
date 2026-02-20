@@ -4,7 +4,7 @@ version: "1.0"
 description: Research a topic using web search and compile findings
 author: alfredai
 tags: [research, web, search, analysis]
-trigger: prompt
+trigger: both
 tools: [web_search]
 model_preference: default
 ---
