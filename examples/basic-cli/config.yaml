@@ -1,0 +1,18 @@
+# Basic CLI Configuration
+# Minimal setup for command-line interaction
+
+llm:
+  providers:
+    - name: openai
+      type: openai
+      api_key: ${OPENAI_API_KEY}
+      default_model: gpt-4
+
+# Memory storage (markdown files)
+memory:
+  type: markdown
+  path: ./data/memories
+
+# CLI channel only
+channels:
+  - type: cli

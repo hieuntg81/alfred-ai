@@ -1,0 +1,32 @@
+# Multi-Agent Configuration
+# Multiple specialized agents with routing
+
+llm:
+  providers:
+    - name: openai
+      type: openai
+      api_key: ${OPENAI_API_KEY}
+      default_model: gpt-4
+
+memory:
+  type: markdown
+  path: ./data/memories
+
+# Multi-agent routing
+routing:
+  strategy: keyword
+  agents:
+    - name: general
+      keywords: []  # Default agent
+      system_prompt: "You are a helpful general-purpose assistant."
+
+    - name: coder
+      keywords: ["code", "programming", "debug", "error"]
+      system_prompt: "You are an expert programmer. Help with code, debugging, and technical issues."
+
+    - name: writer
+      keywords: ["write", "blog", "article", "essay"]
+      system_prompt: "You are a professional writer. Help with writing, editing, and content creation."
+
+channels:
+  - type: cli

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package alfredai.node.v1;
+
+option go_package = "alfred-ai/internal/usecase/node/proto";
+
+service NodeService {
+    rpc Execute(ExecuteRequest) returns (ExecuteResponse);
+    rpc Register(RegisterRequest) returns (RegisterResponse);
+    rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+    rpc ListCapabilities(Empty) returns (CapabilitiesResponse);
+}
+
+message Empty {}
+
+message ExecuteRequest {
+    string capability = 1;
+    bytes params = 2; // JSON-encoded parameters
+}
+
+message ExecuteResponse {
+    bytes result = 1; // JSON-encoded result
+    string error = 2;
+}
+
+message RegisterRequest {
+    string node_id = 1;
+    string name = 2;
+    string platform = 3;
+    string token = 4;
+    repeated Capability capabilities = 5;
+    map<string, string> metadata = 6;
+}
+
+message RegisterResponse {
+    bool success = 1;
+    string error = 2;
+}
+
+message HeartbeatRequest {
+    string node_id = 1;
+}
+
+message HeartbeatResponse {
+    bool ok = 1;
+}
+
+message Capability {
+    string name = 1;
+    string description = 2;
+    bytes parameters = 3; // JSON schema
+}
+
+message CapabilitiesResponse {
+    repeated Capability capabilities = 1;
+}

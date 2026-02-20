@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alfred-ai-config
+  labels:
+    app: alfred-ai
+data:
+  ALFREDAI_GATEWAY_ENABLED: "true"
+  ALFREDAI_GATEWAY_ADDR: "0.0.0.0:8081"
+  ALFREDAI_CLUSTER_ENABLED: "true"
+  ALFREDAI_CLUSTER_REDIS_URL: "redis://redis:6379"

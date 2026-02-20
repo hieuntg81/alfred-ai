@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alfred-ai
+  labels:
+    app: alfred-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: alfred-ai
+  template:
+    metadata:
+      labels:
+        app: alfred-ai
+    spec:
+      containers:
+        - name: alfred-ai
+          image: alfred-ai:latest
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 8081
+              name: gateway
+          envFrom:
+            - configMapRef:
+                name: alfred-ai-config
+            - secretRef:
+                name: alfred-ai-secrets
+                optional: true
+          env:
+            - name: ALFREDAI_CLUSTER_ENABLED
+              value: "true"
+            - name: ALFREDAI_CLUSTER_REDIS_URL
+              value: "redis://redis:6379"
+            - name: ALFREDAI_CLUSTER_NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          livenessProbe:
+            exec:
+              command: ["/app/alfred-ai", "--version"]
+            initialDelaySeconds: 5
+            periodSeconds: 30
+          readinessProbe:
+            tcpSocket:
+              port: gateway
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          volumeMounts:
+            - name: data
+              mountPath: /app/data
+            - name: config
+              mountPath: /app/config
+              readOnly: true
+      volumes:
+        - name: data
+          emptyDir: {}
+        - name: config
+          configMap:
+            name: alfred-ai-config-files
+            optional: true

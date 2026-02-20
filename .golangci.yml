@@ -1,0 +1,78 @@
+run:
+  timeout: 5m
+  tests: true
+  modules-download-mode: readonly
+
+linters:
+  enable:
+    - errcheck      # Check for unchecked errors
+    - gosimple      # Simplify code
+    - govet         # Vet examines Go source code
+    - ineffassign   # Detect ineffectual assignments
+    - staticcheck   # Advanced Go linter
+    - typecheck     # Type-check Go code
+    - unused        # Check for unused code
+    - gofmt         # Check formatting
+    - goimports     # Check imports
+    - misspell      # Check for misspelled English words
+    - gocritic      # Comprehensive linter
+    - revive        # Fast, extensible, flexible linter
+    - gosec         # Security checker
+    - exportloopref # Check for loop variable capture
+
+linters-settings:
+  errcheck:
+    check-blank: true
+    check-type-assertions: true
+
+  govet:
+    check-shadowing: true
+    enable-all: true
+
+  gofmt:
+    simplify: true
+
+  gosec:
+    excludes:
+      - G104  # Audit errors not checked (too noisy, errcheck handles this)
+      - G307  # Deferring unsafe method "Close" (common pattern)
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - style
+      - performance
+    disabled-checks:
+      - paramTypeCombine  # Often produces false positives
+      - unnamedResult     # Named results can be useful for documentation
+
+  revive:
+    rules:
+      - name: exported
+        disabled: false
+      - name: var-naming
+        disabled: false
+      - name: package-comments
+        disabled: true  # Can be enabled later
+
+issues:
+  exclude-rules:
+    # Exclude some linters from running on tests files
+    - path: _test\.go
+      linters:
+        - gosec
+        - errcheck
+        - gocritic
+
+    # Ignore long lines in generated files
+    - path: ".*\\.pb\\.go"
+      linters:
+        - all
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+output:
+  format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true

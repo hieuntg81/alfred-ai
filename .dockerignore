@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# GitHub
+.github
+
+# Documentation
+docs/
+examples/
+*.md
+!skills/**/*.md
+
+# Tests
+*_test.go
+testdata/
+coverage.out
+*.prof
+
+# Build artifacts
+alfred-ai
+alfred-ai.exe
+/tmp
+*.tar.gz
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Development
+.env
+.env.local
+config.local.yaml
+
+# CI/CD
+.golangci.yml
+benchmark-*.txt
+gosec-*.json
+gosec-*.sarif
+
+# Deployment files
+docker-compose.yml
+fly.toml
+.env.example
+
+# Data directories (optional - include if needed in image)
+# data/
+# audit.log

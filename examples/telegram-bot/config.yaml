@@ -1,0 +1,20 @@
+# Telegram Bot Configuration
+# Run alfred-ai as a Telegram bot with memory
+
+llm:
+  providers:
+    - name: openai
+      type: openai
+      api_key: ${OPENAI_API_KEY}
+      default_model: gpt-4
+
+# Memory with auto-curation
+memory:
+  type: markdown
+  path: ./data/memories
+  auto_curate: true
+
+# Telegram channel
+channels:
+  - type: telegram
+    token: ${TELEGRAM_BOT_TOKEN}

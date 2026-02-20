@@ -1,0 +1,229 @@
+# alfred-ai .gitignore
+
+# Binaries and executables
+alfred-ai
+alfred-ai.exe
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go build artifacts
+*.o
+*.a
+*.prof
+*.test
+/dist/
+/build/
+
+# Test coverage files
+*.out
+coverage.out
+cov_*.out
+coverage_*.out
+*.coverprofile
+
+# Go workspace file
+go.work
+
+# Dependency directories
+/vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Configuration files with sensitive data
+config.yaml
+config.yml
+*.local.yaml
+*.local.yml
+.env
+.env.local
+.env.*.local
+
+# Allow example configs
+!examples/*/config.yaml
+!examples/*/config.yml
+
+# Data directories
+/data/
+/workspace/
+*.db
+*.sqlite
+*.sqlite3
+
+# Memory files
+/memories/
+*.md.bak
+
+# Audit logs
+audit.log
+audit.jsonl
+*.audit
+
+# Temporary files
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+desktop.ini
+$RECYCLE.BIN/
+
+# Encryption artifacts
+*.enc
+*.encrypted
+salt
+*.salt
+
+# Test artifacts
+/test-output/
+/scripts/test-output/
+*.test.log
+
+# Node modules (if any frontend/tools)
+node_modules/
+
+# Python (if any Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# Temporary test configs
+/tmp-config-*.yaml
+test-config-*.yaml
+
+# Build artifacts from test script
+/scripts/alfred-ai
+
+# Documentation build artifacts
+/docs/_build/
+/docs/.doctrees/
+
+# Internal docs (not for public release)
+/docs/internal/
+
+# SSH keys and certificates
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# API keys and secrets
+*apikey*
+*api_key*
+*secret*
+*token*
+*password*
+
+# Allow example/template files
+!examples/**
+!docs/**
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Profiler output
+*.prof
+cpu.prof
+mem.prof
+block.prof
+mutex.prof
+
+# Delve debugger
+debug
+__debug_bin
+
+# GoLand
+.idea/
+
+# Air (live reload tool)
+tmp/
+.air.toml
+
+# goreleaser
+dist/
+*.snap
+
+# gopls
+.gopls/
+.brv/
+.claude/
+.github/
+.bin/
+.serena/
